@@ -32,7 +32,7 @@ app.get('/', async (req, res) => {
 })
 
 // express 啟動服務 - 加入此片段
-app.listen((process.env.PORT), () => {
+app.listen((process.env.PORT || 5000), () => {
     console.log(`Server is listening on port ${process.env.PORT}`);
 })
 
