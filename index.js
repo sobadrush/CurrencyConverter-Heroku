@@ -23,11 +23,11 @@ const convertCurrency = async (fromCurrency, toCurrency, amount) => {
 app.get('/', async (req, res) => {
     const { fromCurrency, toCurrency, amount } = req.query; // destructure 解構
     if (!fromCurrency || !toCurrency || !amount) {
-        res.send("Please provide all the required parameters!")
+        res.send({"message": "Please provide all the required parameters!"})
     } else {
         const message = await convertCurrency(fromCurrency, toCurrency, amount)
         // res.send(message)
-        res.json(message) // 轉換成 json
+        res.json({message}) // 轉換成 json
     }
 })
 
